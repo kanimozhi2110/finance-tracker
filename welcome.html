@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="welcome-container">
+        <h2>Welcome, <span id="userName"></span>!</h2>
+        <p>You have successfully logged in.</p>
+
+        <!-- Choose Action -->
+        <h3>Choose an Option</h3>
+        <button id="setBudgetOption">Set Budget</button>
+        <button id="recordExpenseOption">Record Expense</button>
+
+        <!-- Set Budget Section -->
+        <div id="setBudgetSection" style="display: none;">
+            <h3>Set Budget</h3>
+            <label for="category">Category</label>
+            <input type="text" id="category" placeholder="e.g., Groceries" />
+            <label for="budgetAmount">Budget Amount (₹)</label>
+            <input type="number" id="budgetAmount" placeholder="Enter Budget" />
+            <label for="timePeriod">Time Period (months)</label>
+            <input type="number" id="timePeriod" placeholder="Enter Time Period" />
+            <button id="setBudgetBtn">Set Budget</button>
+        </div>
+
+        <!-- Record Expense Section -->
+        <div id="recordExpenseSection" style="display: none;">
+            <h3>Record Expense</h3>
+            <label for="expenseCategory">Category</label>
+            <input type="text" id="expenseCategory" placeholder="e.g., Groceries" />
+            <label for="expenseAmount">Expense Amount (₹)</label>
+            <input type="number" id="expenseAmount" placeholder="Enter Expense" />
+            <button id="addExpenseBtn">Record Expense</button>
+        </div>
+
+        <!-- Budget Summary Table -->
+        <h3>Budget Summary</h3>
+        <table id="summaryTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Budget</th>
+                    <th>Spent</th>
+                    <th>Remaining</th>
+                    <th>Time Period</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="emptyState">
+                    <td colspan="6">No budgets set yet. Add a new budget to see it here.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Logout Button -->
+        <button onclick="logout()" id="logoutBtn">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
